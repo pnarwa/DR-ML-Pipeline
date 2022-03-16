@@ -10,40 +10,45 @@
 ## Installation <a name="installation"></a>
 
 The code has been developed using the Anaconda distribution of Python. The version of Python used is v3.9.7.
-The main libraries used in developing the code are pandas, numpy, nltk, sqlalchemy, sklearn, skmultilearn, flask, plotly
-The version of sklearn used in the implementation : 0.24.2
-The version of skmultilearn used in the implementation : 0.2.0
+The main libraries used are pandas, numpy, nltk, sqlalchemy, sklearn, skmultilearn, flask, plotly.<BR>
+The version of sklearn used in the implementation : 0.24.2<BR>
+The version of skmultilearn used in the implementation : 0.2.0<BR>
 
-Command to install the skmultilearn library:
+Command to install the skmultilearn library:<BR>
 pip install scikit-multilearn 
 
 The links below have further details on installation of the skmultilearn library
 - http://scikit.ml/
 - https://pypi.org/project/scikit-multilearn/
 
+As the dataset is a multi-labeled dataset and is highly imbalanced, the iterative_train_test_split method from the skmultilearn library is used to perform a iteratively stratified train/test split of the multi-labeled data.<BR>
+Also, the IterativeStratification class from skmultilearn is used to perform a stratified sampling when creating the k-folds for cross-validation.
+
 ## Business Objectives<a name="objectives"></a>
-The objective here is to develop a machine learning pipeline which builds a classification model that can classify disaster response messages.
-With the help of the webapp developed as part of the project, a user can input a message pertaining to a diasaster, and get a classification of the message into relevant disaster response categories.
+The objective here is to develop a NLP(nautral language processing) based machine learning pipeline to build a classification model for classifying disaster response messages.<BR>
+Using the webapp developed as part of the project, a user can input a message pertaining to a disaster, and get a classification of the message into relevant disaster response categories.<BR>
 The disaster response messages and categories used in the analysis are made available in collaboration with Figure Eight now [Appen](http://appen.com).
 
 ## File Descriptions <a name="files"></a>
-The directories and files are organized as depicted below:
-- \notebooks : notebooks used in preparing the ETL and ML pipelines
-      - ETLPipelinePreparation.ipynb
-      - MLPipelinePreparation.ipynb
-- \data : data used in the analyis, and the ETL pipeline developed to process the data 
-      - disaster_categories.csv
-      - disaster_messages.csv
-      - DisasterResponse.db
-      - process_data.py
-- \models : ML pipeline and the classification model built using the pipeline
-      - train_classifier.py
-      - model_classifier.pkl
-- \app : flask program and templates related to the webapp
-      - run.py
-- \app\templates
-      - master.html
-      - go.html
+The directories and files are organized as depicted below:<BR>
+- \notebooks : notebooks used in preparing the ETL and ML pipelines<BR>
+      - ETLPipelinePreparation.ipynb<BR>
+      - MLPipelinePreparation.ipynb<BR>
+- \data : data used in the analysis, ETL pipeline developed to process the data<BR>
+      - disaster_categories.csv<BR>
+      - disaster_messages.csv<BR>
+      - DisasterResponse.db<BR>
+      - process_data.py<BR>
+- \models : ML pipeline and the classification model built using the pipeline<BR>
+      - train_classifier.py<BR>
+      - model_classifier.pkl<BR>
+- \app : flask program and templates related to the webapp<BR>
+      - run.py<BR>
+- \app\templates<BR>
+      - master.html<BR>
+      - go.html<BR>
+- \screenshots : screenshots of the webapp home page and sample results pages
+      
 
 
 ## Execution Instructions <a name="exec"></a>
