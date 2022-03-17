@@ -21,8 +21,8 @@ The links below have further details on installation of the skmultilearn library
 - http://scikit.ml/
 - https://pypi.org/project/scikit-multilearn/
 
-As the dataset is a multi-labeled dataset and is highly imbalanced, the iterative_train_test_split method from the skmultilearn library is used to perform a iteratively stratified train/test split of the multi-labeled data.<BR>
-Also, the IterativeStratification class from skmultilearn is used to perform a stratified sampling when creating the k-folds for cross-validation.
+The dataset is a multi-labeled dataset and is highly imbalanced. To address the issue of disproportionate distribution of the labels in the train/test split, the iterative_train_test_split method from the skmultilearn library is used to perform an iteratively stratified train/test split of the data.<BR>
+Also, the IterativeStratification class from the skmultilearn library is used to perform a stratified sampling when creating the k-folds for cross-validation.
 
 ## Business Objectives<a name="objectives"></a>
 The objective here is to develop a NLP(nautral language processing) based machine learning pipeline to build a classification model for classifying disaster response messages.<BR>
@@ -32,24 +32,24 @@ The disaster response messages and categories used in the analysis are made avai
 ## File Descriptions <a name="files"></a>
 The directories and files are organized as depicted below:<BR>
 - \notebooks : notebooks used in preparing the ETL and ML pipelines<BR>
-      - ETLPipelinePreparation.ipynb<BR>
-      - MLPipelinePreparation.ipynb<BR>
+      - ETLPipelinePreparation.ipynb : notebook containing the code in preparation of the ETL pipeline<BR>
+      - MLPipelinePreparation.ipynb : notebook containing the code in preparation of the ML pipeline<BR>
+      - MLPipelinePreparation.py : .py version of the MLPipelinePreparation notebook<BR>
 - \data : data used in the analysis, ETL pipeline developed to process the data<BR>
-      - disaster_categories.csv<BR>
-      - disaster_messages.csv<BR>
-      - DisasterResponse.db<BR>
-      - process_data.py<BR>
+      - disaster_categories.csv : categories dataset<BR>
+      - disaster_messages.csv : messages dataset<BR>
+      - process_data.py : ETL pipeline script to clean and process the data and save it to a sqlite database<BR>
+      - DisasterResponse.db : sqlite database to save the clean dataset<BR>
 - \models : ML pipeline and the classification model built using the pipeline<BR>
-      - train_classifier.py<BR>
-      - model_classifier.pkl<BR>
-- \app : flask program and templates related to the webapp<BR>
-      - run.py<BR>
+      - train_classifier.py : ML pipeline script to build the classification model<BR>
+      - model_classifier.pkl : classification model built using the pipeline<BR>
+- \app : scripts and templates related to the webapp<BR>
+      - run.py : script to execute the webapp<BR>
 - \app\templates<BR>
-      - master.html<BR>
-      - go.html<BR>
+      - master.html : main page of the webapp<BR>
+      - go.html : results page displaying the classification results<BR>
 - \screenshots : screenshots of the webapp home page and sample results pages
       
-
 
 ## Execution Instructions <a name="exec"></a>
 - To execute the ETL pipeline that cleans data and stores it in a sqlite database, run the below command:
